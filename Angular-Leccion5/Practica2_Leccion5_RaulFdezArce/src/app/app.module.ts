@@ -10,6 +10,7 @@ import { NotFoundComponent } from './pages/not-found/not-found.component';
 import { LinkHoverDirective } from './directives/link-hover.directive';
 import { EmptyInputDirective } from './directives/empty-input.directive';
 import { UserDataComponent } from './pages/user-data/user-data.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { UserDataComponent } from './pages/user-data/user-data.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

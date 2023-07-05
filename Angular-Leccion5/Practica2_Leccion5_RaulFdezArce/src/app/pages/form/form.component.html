@@ -6,15 +6,33 @@
     <tr class="mb-2">
       <td>
         <label for="email">Email: </label>
-        <input type="text" name="email" id="email" class="ms-1">
+        <input type="text" name="email" id="email" class="ms-1" [(ngModel)]="email">
       </td>
     </tr>
     <tr class="mb-2">
       <label for="passwd">Password: </label>
-      <input type="text" name="passwd" id="passwd" class="ms-1">
+      <input type="text" name="passwd" id="passwd" class="ms-1" [(ngModel)]="passwd">
     </tr>
 
-    <a routerLink="user-data" class="mt-2 border text-decoration-none text-white text-center bg-primary">Login!</a>
+    <button (click)="validateFormLogin()" class="mt-2 border text-decoration-none text-white text-center bg-primary">Validate</button>
   </form>
+
+  <div *ngIf="show">
+    <div *ngIf="validate">
+      <p>Email: {{ email }}</p>
+      <p>Password: {{ passwd }}</p>
+    </div>
+    <p *ngIf="!validate">
+      Debes rellenar todos los datos
+    </p>
+
+    <p *ngIf="!validateEmail">
+      Email Incorrecto
+    </p>
+
+    <p *ngIf="!validatePasswd">
+      La contraseña debe tener al menos 9 caracteres
+    </p>
+  </div>
 
 </main>

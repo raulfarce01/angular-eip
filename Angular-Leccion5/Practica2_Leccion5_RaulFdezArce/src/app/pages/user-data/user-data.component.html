@@ -6,23 +6,40 @@
       <tr class="mb-2">
         <td>
           <label for="name">Name: </label>
-          <input type="text" name="name" id="name" class="ms-1">
+          <input type="text" name="name" id="name" class="ms-1" [(ngModel)]="name" appEmptyInput>
         </td>
         <td>
           <label for="surname">Surname: </label>
-          <input type="text" name="surname" id="surname" class="ms-1">
+          <input type="text" name="surname" id="surname" class="ms-1" [(ngModel)]="surname" appEmptyInput>
         </td>
       </tr>
       <tr class="mb-2">
         <label for="address">Address: </label>
-        <input type="text" name="address" id="address" class="ms-1">
+        <input type="text" name="address" id="address" class="ms-1" [(ngModel)]="address" appEmptyInput>
       </tr>
       <tr>
         <label for="phone">Phone Number: </label>
-        <input type="text" name="phone" id="phone" class="ms-1">
+        <input type="text" name="phone" id="phone" class="ms-1" [(ngModel)]="phone" appEmptyInput>
       </tr>
-      <button class="mt-2 text-white text-center bg-primary border">Validar</button>
+      <button (click)="validateForm()" class="mt-2 text-white text-center bg-primary border">Validar</button>
     </div>
+
+    <div *ngIf="show">
+      <div *ngIf="validate">
+        <p>Name: {{ name }}</p>
+        <p>Surname: {{ surname }}</p>
+        <p>Address: {{ address }}</p>
+        <p>Phone: {{ phone }}</p>
+      </div>
+
+      <p *ngIf="!validate">
+        Debes rellenar todos los datos
+      </p>
+    </div>
+
+   <!--  <div>
+      {{ result }}
+    </div> -->
   
   </main>
   
