@@ -12,14 +12,14 @@ export class FormComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  public email = '';
-  public passwd = '';
+  public email : String = '';
+  public passwd : String = '';
 
-  public show = false;
+  public show : Boolean = false;
 
-  public validate = false;
-  public validateEmail = false;
-  public validatePasswd = false
+  public validate : Boolean = false;
+  public validateEmail : Boolean = false;
+  public validatePasswd : Boolean = false
 
   public validateFormLogin(){
     this.show = true;

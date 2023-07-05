@@ -18,11 +18,11 @@ export class UserDataComponent implements OnInit {
   public phone: String = '';
 
   /*Esta variable sirve para comprobar cuando falte algún dato, y se utiliza en la función validateForm*/
-  public validate = false;
+  public validate: Boolean = false;
 
-  public show = false
+  public show: Boolean = false
 
-  public result = '';
+  //public result = '';
 
   public validateForm(){
     this.show = true;
